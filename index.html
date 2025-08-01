@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Reestruturação Organizacional - Visan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --azul-petroleo: #06192a;
+            --verde-vibrante: #00e800;
+            --cinza-claro: #f4f4f4;
+            --card-bg: #0A243D;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --font-primaria: 'Poppins', sans-serif;
+            --font-secundaria: 'Merriweather', serif;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-primaria);
+            background-color: var(--azul-petroleo);
+            color: var(--cinza-claro);
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+        }
+        h1, h2, h3, h4 { font-family: var(--font-primaria); font-weight: 700; color: white; }
+        p, li, blockquote { font-family: var(--font-secundaria); color: #adb5bd; }
+        .text-brand-green { color: var(--verde-vibrante); }
+        
+        .tab-button {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        .tab-button.active {
+            color: var(--verde-vibrante);
+            border-bottom-color: var(--verde-vibrante);
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeInTab 0.5s ease-in-out; }
+        @keyframes fadeInTab { from { opacity: 2; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .process-flow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .process-step {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--verde-vibrante);
+            width: 100%;
+            max-width: 600px;
+        }
+        .process-arrow {
+            color: var(--verde-vibrante);
+            margin: 1rem 0;
+        }
+        .content-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <!-- Header -->
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-white">Plano de Reestruturação Organizacional</h1>
+            <p class="text-lg text-gray-400 font-brand-secondary mt-2">Definição de Pilares, Processos e Próximos Passos</p>
+        </header>
+
+        <!-- Abas de Navegação -->
+        <div class="border-b border-gray-700 mb-8">
+            <nav id="tabs-nav" class="flex justify-center -mb-px space-x-8">
+                <button class="tab-button text-lg font-semibold py-4 px-1 active" data-tab="resumo">
+                    <i data-lucide="clipboard-list" class="w-5 h-5 mr-2"></i>Resumo da Reunião
+                </button>
+                <button class="tab-button text-lg font-semibold py-4 px-1" data-tab="plano">
+                    <i data-lucide="list-checks" class="w-5 h-5 mr-2"></i>Plano de Ação
+                </button>
+                <button class="tab-button text-lg font-semibold py-4 px-1" data-tab="processos">
+                    <i data-lucide="workflow" class="w-5 h-5 mr-2"></i>Desenho de Processos
+                </button>
+            </nav>
+        </div>
+
+        <!-- Conteúdo das Abas -->
+        <main>
+            <!-- Aba 1: Resumo da Reunião -->
+            <div id="content-resumo" class="tab-content active">
+                <div class="space-y-8">
+                    <div class="content-box p-6 rounded-lg">
+                        <h2 class="text-2xl mb-4">Decisão Estratégica: Estrutura em 3 Pilares</h2>
+                        <p>A principal decisão da reunião foi reorganizar a estrutura da Visan em três macro-áreas operacionais, cada uma liderada por uma colaboradora-chave. O objetivo é criar clareza nas responsabilidades, otimizar a comunicação e dar autonomia para cada setor, com a Simone atuando como supervisora estratégica e ponto de aprovação final para decisões de maior impacto.</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="content-box p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-brand-green mb-3 flex items-center gap-2"><i data-lucide="shopping-cart"></i>Pilar Comercial</h3>
+                            <p><strong class="text-white">Líder:</strong> Jéssica</p>
+                            <p><strong class="text-white">Equipe de Apoio:</strong> Samuel</p>
+                            <p class="mt-2 text-sm">Responsável por todos os canais de venda, prospecção, relacionamento com o cliente e por gerar as demandas de compra com base na performance de vendas.</p>
+                        </div>
+                        <div class="content-box p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-brand-green mb-3 flex items-center gap-2"><i data-lucide="settings"></i>Pilar de Operações</h3>
+                            <p><strong class="text-white">Líder:</strong> Laís</p>
+                            <p class="mt-2 text-sm">Responsável por toda a cadeia logística: cotação, compras, recebimento, controle de estoque e supervisão da expedição. Também cuidará da manutenção predial.</p>
+                        </div>
+                        <div class="content-box p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-brand-green mb-3 flex items-center gap-2"><i data-lucide="landmark"></i>Pilar Administrativo/Financeiro</h3>
+                            <p><strong class="text-white">Líder:</strong> Hellen</p>
+                            <p class="mt-2 text-sm">Responsável por todas as rotinas financeiras (contas a pagar e receber, cobrança), aprovação de crédito e processos administrativos, incluindo a emissão de boletos.</p>
+                        </div>
+                    </div>
+                     <div class="content-box p-6 rounded-lg">
+                        <h2 class="text-2xl mb-4">Principais Redefinições de Papéis</h2>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong class="text-white">Laís:</strong> Deixa a frente comercial para assumir a supervisão de Operações, um papel mais alinhado ao seu perfil de executora. Precisará de treinamento para desenvolver uma mentalidade mais estratégica na gestão de compras e estoque.</li>
+                            <li><strong class="text-white">Samuel:</strong> Será movido do financeiro para o pilar Comercial, sob a liderança da Jéssica. O objetivo é desenvolvê-lo na área de vendas, aproveitando sua curiosidade e boa comunicação, e mitigar os erros nos processos financeiros associados ao seu TDA.</li>
+                             <li><strong class="text-white">Jane:</strong> Continua com a gestão dos contratos de Locação e Telecare, operando de forma independente, mas agora interagindo com os novos pilares de forma estruturada (ex: solicitando compras para a Operações).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aba 2: Plano de Ação -->
+            <div id="content-plano" class="tab-content">
+                 <div class="content-box p-6 rounded-lg">
+                    <h2 class="text-2xl mb-4">Próximos Passos para Implementação</h2>
+                    <p>Para que a nova estrutura seja implementada com sucesso, as seguintes ações devem ser executadas, com início a partir da próxima segunda-feira.</p>
+                </div>
+                <div class="mt-6 space-y-4">
+                    <div class="content-box p-4 rounded-lg">
+                        <h3 class="font-bold text-lg text-brand-green">1. Comunicação da Reestruturação</h3>
+                        <p class="text-sm mt-1">Realizar uma reunião formal com Jéssica, Laís e Hellen para apresentar a nova estrutura, alinhar as responsabilidades e esclarecer o papel de cada pilar.</p>
+                        <p class="text-xs mt-2"><strong class="text-white">Responsável:</strong> Simone</p>
+                    </div>
+                    <div class="content-box p-4 rounded-lg">
+                        <h3 class="font-bold text-lg text-brand-green">2. Desenho do Formulário de Compras</h3>
+                        <p class="text-sm mt-1">Criar o modelo do "Formulário de Solicitação de Compra", que será a ferramenta padrão para formalizar as demandas. Campos a incluir: Data da necessidade, Solicitante, Prazo, Produto, Fornecedor, Preço de Compra, Preço de Venda, Justificativa, Condições (à vista/a prazo) e Assinatura de Autorização.</p>
+                        <p class="text-xs mt-2"><strong class="text-white">Responsável:</strong> Cléber (Consultor)</p>
+                    </div>
+                    <div class="content-box p-4 rounded-lg">
+                        <h3 class="font-bold text-lg text-brand-green">3. Mapeamento do Novo Processo de Compras</h3>
+                        <p class="text-sm mt-1">Desenhar o fluxograma detalhado do novo processo de compras, incluindo a definição da alçada de aprovação (ex: até R$ 1.000) para dar autonomia à Laís em compras de menor valor.</p>
+                        <p class="text-xs mt-2"><strong class="text-white">Responsável:</strong> Cléber (Consultor)</p>
+                    </div>
+                    <div class="content-box p-4 rounded-lg">
+                        <h3 class="font-bold text-lg text-brand-green">4. Planejamento da Transição do Samuel</h3>
+                        <p class="text-sm mt-1">Definir um cronograma e um plano de tarefas para a transição do Samuel para o pilar Comercial, incluindo o treinamento inicial que será conduzido pela Jéssica.</p>
+                        <p class="text-xs mt-2"><strong class="text-white">Responsáveis:</strong> Jéssica, Hellen</p>
+                    </div>
+                    <div class="content-box p-4 rounded-lg">
+                        <h3 class="font-bold text-lg text-brand-green">5. Plano de Desenvolvimento para Laís</h3>
+                        <p class="text-sm mt-1">Estruturar um plano de treinamento para a Laís, focado em desenvolver a mentalidade estratégica necessária para a gestão de compras, negociação com fornecedores e controle de estoque.</p>
+                        <p class="text-xs mt-2"><strong class="text-white">Responsáveis:</strong> Simone, Cléber (Consultor)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aba 3: Desenho de Processos -->
+            <div id="content-processos" class="tab-content">
+                <div class="content-box p-6 rounded-lg">
+                    <h2 class="text-2xl mb-4">Fluxograma do Novo Processo de Compras</h2>
+                    <p>O processo foi desenhado para garantir que as compras sejam sempre baseadas em dados de vendas, com aprovações claras e comunicação formal entre os pilares.</p>
+                </div>
+                <div class="mt-8 process-flow">
+                    <div class="process-step p-4 rounded-lg">
+                        <p><strong class="text-white">1. Início (Comercial):</strong> A <strong class="text-brand-green">Jéssica</strong> identifica a necessidade de compra com base em relatórios de vendas e performance de produtos.</p>
+                    </div>
+                    <i data-lucide="arrow-down" class="process-arrow w-10 h-10"></i>
+                    <div class="process-step p-4 rounded-lg">
+                        <p><strong class="text-white">2. Solicitação Formal:</strong> A <strong class="text-brand-green">Jéssica</strong> preenche o "Formulário de Solicitação de Compra" com a justificativa, quantidades e sugestões.</p>
+                    </div>
+                    <i data-lucide="arrow-down" class="process-arrow w-10 h-10"></i>
+                    <div class="process-step p-4 rounded-lg">
+                        <p><strong class="text-white">3. Aprovação Estratégica:</strong> A <strong class="text-brand-green">Simone</strong> analisa o formulário. Esta etapa garante que a compra está alinhada com a estratégia comercial antes do esforço de cotação. Se aprovado, ela assina e o documento segue para Operações.</p>
+                    </div>
+                    <i data-lucide="arrow-down" class="process-arrow w-10 h-10"></i>
+                    <div class="process-step p-4 rounded-lg">
+                        <p><strong class="text-white">4. Cotação e Negociação (Operações):</strong> A <strong class="text-brand-green">Laís</strong> recebe o formulário aprovado, realiza a cotação com fornecedores e negocia as melhores condições (preço, prazo).</p>
+                    </div>
+                    <i data-lucide="arrow-down" class="process-arrow w-10 h-10"></i>
+                     <div class="process-step p-4 rounded-lg">
+                        <p><strong class="text-white">5. Aprovação Final da Compra:</strong> Para compras acima da alçada definida (ex: > R$ 1.000), a <strong class="text-brand-green">Laís</strong> apresenta as opções para a <strong class="text-brand-green">Simone</strong>. Esta segunda aprovação garante o controle financeiro e a validação da negociação.</p>
+                    </div>
+                    <i data-lucide="arrow-down" class="process-arrow w-10 h-10"></i>
+                    <div class="process-step p-4 rounded-lg">
+                        <p><strong class="text-white">6. Execução do Pagamento (Financeiro):</strong> A <strong class="text-brand-green">Laís</strong> encaminha a documentação da compra para a <strong class="text-brand-green">Hellen</strong>, que agenda e executa o pagamento conforme as condições negociadas.</p>
+                    </div>
+                     <i data-lucide="arrow-down" class="process-arrow w-10 h-10"></i>
+                    <div class="process-step p-4 rounded-lg">
+                        <p><strong class="text-white">7. Recebimento e Estoque (Operações):</strong> A <strong class="text-brand-green">Laís</strong> recebe a mercadoria, confere com o pedido, dá entrada no sistema de estoque e organiza o armazenamento.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabsContainer = document.getElementById('tabs-nav');
+            const tabButtons = tabsContainer.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const tabId = button.getAttribute('data-tab');
+
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                        if (content.id === 'content-' + tabId) {
+                            content.classList.add('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
